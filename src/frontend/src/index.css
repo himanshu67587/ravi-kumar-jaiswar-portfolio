@@ -1,0 +1,184 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+    /* Dark portfolio theme — always dark */
+    --background: 0.13 0.01 220;
+    --foreground: 0.96 0.006 220;
+    --card: 0.19 0.015 220;
+    --card-foreground: 0.96 0.006 220;
+    --popover: 0.21 0.016 220;
+    --popover-foreground: 0.96 0.006 220;
+    --primary: 0.67 0.13 186;
+    --primary-foreground: 0.13 0.01 220;
+    --secondary: 0.21 0.016 220;
+    --secondary-foreground: 0.96 0.006 220;
+    --muted: 0.19 0.015 220;
+    --muted-foreground: 0.72 0.012 220;
+    --accent: 0.67 0.13 186;
+    --accent-foreground: 0.13 0.01 220;
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+    --border: 0.25 0.015 220;
+    --input: 0.21 0.016 220;
+    --ring: 0.67 0.13 186;
+    --chart-1: 0.67 0.13 186;
+    --chart-2: 0.6 0.118 184.704;
+    --chart-3: 0.398 0.07 227.392;
+    --chart-4: 0.828 0.189 84.429;
+    --chart-5: 0.769 0.188 70.08;
+    --sidebar: 0.19 0.015 220;
+    --sidebar-foreground: 0.96 0.006 220;
+    --sidebar-primary: 0.67 0.13 186;
+    --sidebar-primary-foreground: 0.13 0.01 220;
+    --sidebar-accent: 0.21 0.016 220;
+    --sidebar-accent-foreground: 0.96 0.006 220;
+    --sidebar-border: 0.25 0.015 220;
+    --sidebar-ring: 0.67 0.13 186;
+
+    /* Custom portfolio tokens */
+    --page-bg: oklch(0.13 0.01 220);
+    --panel-bg: oklch(0.19 0.015 220);
+    --panel-alt: oklch(0.17 0.013 220);
+    --divider: oklch(0.25 0.015 220);
+    --teal: oklch(0.67 0.13 186);
+    --teal-dim: oklch(0.67 0.13 186 / 0.15);
+    --text-primary: oklch(0.96 0.006 220);
+    --text-muted: oklch(0.72 0.012 220);
+  }
+
+  .dark {
+    --background: 0.13 0.01 220;
+    --foreground: 0.96 0.006 220;
+    --card: 0.19 0.015 220;
+    --card-foreground: 0.96 0.006 220;
+    --popover: 0.21 0.016 220;
+    --popover-foreground: 0.96 0.006 220;
+    --primary: 0.67 0.13 186;
+    --primary-foreground: 0.13 0.01 220;
+    --secondary: 0.21 0.016 220;
+    --secondary-foreground: 0.96 0.006 220;
+    --muted: 0.19 0.015 220;
+    --muted-foreground: 0.72 0.012 220;
+    --accent: 0.67 0.13 186;
+    --accent-foreground: 0.13 0.01 220;
+    --destructive: 0.704 0.191 22.216;
+    --destructive-foreground: 0.205 0 0;
+    --border: 0.25 0.015 220;
+    --input: 0.21 0.016 220;
+    --ring: 0.67 0.13 186;
+    --sidebar: 0.19 0.015 220;
+    --sidebar-foreground: 0.96 0.006 220;
+    --sidebar-primary: 0.67 0.13 186;
+    --sidebar-primary-foreground: 0.13 0.01 220;
+    --sidebar-accent: 0.21 0.016 220;
+    --sidebar-accent-foreground: 0.96 0.006 220;
+    --sidebar-border: 0.25 0.015 220;
+    --sidebar-ring: 0.67 0.13 186;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background-color: var(--page-bg);
+    font-family: "Inter", "Poppins", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer utilities {
+  .font-poppins {
+    font-family: "Poppins", sans-serif;
+  }
+
+  .text-teal {
+    color: var(--teal);
+  }
+
+  .bg-teal {
+    background-color: var(--teal);
+  }
+
+  .border-teal {
+    border-color: var(--teal);
+  }
+
+  .bg-panel {
+    background-color: var(--panel-bg);
+  }
+
+  .bg-panel-alt {
+    background-color: var(--panel-alt);
+  }
+
+  .text-muted-custom {
+    color: var(--text-muted);
+  }
+
+  /* Scroll reveal animations */
+  .reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal-left {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+
+  .reveal-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .reveal-right {
+    opacity: 0;
+    transform: translateX(40px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+
+  .reveal-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .delay-100 {
+    transition-delay: 0.1s;
+  }
+  .delay-200 {
+    transition-delay: 0.2s;
+  }
+  .delay-300 {
+    transition-delay: 0.3s;
+  }
+  .delay-400 {
+    transition-delay: 0.4s;
+  }
+  .delay-500 {
+    transition-delay: 0.5s;
+  }
+
+  .glow-teal {
+    box-shadow: 0 0 40px 8px oklch(0.67 0.13 186 / 0.25), 0 8px 32px 0
+      rgba(0, 0, 0, 0.4);
+  }
+}
