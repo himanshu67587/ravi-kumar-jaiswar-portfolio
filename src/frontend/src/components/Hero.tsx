@@ -1,6 +1,6 @@
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { useEffect } from "react";
-
+import profileImg from "../ravi kumar.png";
 export default function Hero() {
   useEffect(() => {
     const els = document.querySelectorAll(".hero-reveal");
@@ -129,11 +129,11 @@ export default function Hero() {
                   border: "2px solid oklch(0.67 0.13 186 / 0.4)",
                 }}
               >
-                <img
-                  src="/assets/generated/profile.dim_400x400.jpg"
+               <img
+                  src={profileImg}
                   alt="Ravi Kumar Jaiswar - Senior Sales Executive"
                   className="w-full h-full object-cover object-top"
-                />
+               />
               </div>
               {/* Floating badge */}
               <div
