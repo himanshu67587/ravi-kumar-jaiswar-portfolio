@@ -1,6 +1,6 @@
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { useEffect } from "react";
-import profileImg from "../ravi kumar.png";
+import profileImg from "../../ravi kumar.png";
 export default function Hero() {
   useEffect(() => {
     const els = document.querySelectorAll(".hero-reveal");
